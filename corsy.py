@@ -70,8 +70,9 @@ def cors(target, header_dict, delay):
     netloc = parsed.netloc
     scheme = parsed.scheme
     url = scheme + '://' + netloc + parsed.path
+    query = parsed.query
     try:
-        return active_tests(url, root, scheme, header_dict, delay)
+        return active_tests(url, query, root, scheme, header_dict, delay)
     except ConnectionError as exc:
         print('%s Unable to connect to %s' % (bad, root))
 

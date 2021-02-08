@@ -67,7 +67,7 @@ def prompt(default=None):
 def extractHeaders(headers):
     headers = headers.replace('\\n', '\n')
     sorted_headers = {}
-    matches = re.findall(r'^?(.*?):\s(.*?)[\n$]', headers)
+    matches = re.findall(r'(.*?):\s(.*?)[\n$]', headers)
     for match in matches:
         header = match[0]
         value = match[1]
